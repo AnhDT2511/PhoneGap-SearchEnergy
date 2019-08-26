@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
+
+<body>
+    <h2>ITE</h2>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+    <ul id="myUL">
+        <li><a>1.inside which html element do we put the javascript? | <span style='color: red'>c) &lt;script&gt;</span></a></li>
+        <li><a>2. what is the correct javascript syntax to write "hello world"? | <span style='color: red'>c) document.write("hello world")</span></a></li>
+        <li><a>3. where is the correct place to insert a javascript? | <span style='color: red'>a) both the &lt;head&gt; section and the &lt;body&gt; section are correct</span></a></li>
+        <li><a>4. what is the correct syntax for referring to an external script called "xxx.js"? | <span style='color: red'>a) &lt;script src="xxx.js"&gt;</span></a></li>
+        <li><a>5. an external javascript must contain the &lt;script&gt; tag | <span style='color: red'>a) false</span></a></li>
+        <li><a>6. how do you write "hello world" in an alert box? | <span style='color: red'>a) alert("hello world")</span></a></li>
+        <li><a>7. how do you create a function? | <span style='color: red'>c) function myfunction()</span></a></li>
+        <li><a>8. how do you call a function named "myfunction"? | <span style='color: red'>b) myfunction()</span></a></li>
+        <li><a>9. how do you write a conditional statement for executing some statements only if "i" is equal to 5? | <span style='color: red'>b) if (i==5)</span></a></li>
+        <li><a>10. how do you write a conditional statement for executing some statements only if "i" is not equal to 5? | <span style='color: red'>a) if (i != 5)</span></a></li>
+        <li><a>11. how many looping statements are there in javascript? | <span style='color: red'>c) 3. the "for" loop, the "while" loop, and the "do___while" loop</span></a></li>
+        <li><a>12. how does a "for" loop start? | <span style='color: red'>b) for (i = 0; i &lt;= 5; i++)</span></a></li>
+        <li><a>13. how can you add a comment in a javascript? | <span style='color: red'>a) //this is a comment</span></a></li>
+        <li><a>14. what is the correct javascript syntax to insert a comment that has more than one line? | <span style='color: red'>a) /*this comment has more than one line*/</span></a></li>
+        <li><a>15. what is the correct way to write a javascript arr	ay? | <span style='color: red'>d) var txt = new array("tim","kim","jim")</span></a></li>
+        <li><a>16. how do you round the number 7.25, to the nearest whole number? | <span style='color: red'>d) math.round(7.25)</span></a></li>
+        <li><a>17. how do you find the largest number of 2 and 4? | <span style='color: red'>b) math.max(2,4)</span></a></li>
+        <li><a>18. what is the correct javascript syntax for opening a new window called "window2" | <span style='color: red'>d) window.open("http://www.w3schools.com","window2")</span></a></li>
+        <li><a>19. how do you put a message in the browser's status bar? | <span style='color: red'>c) window.status = "put your message here"</span></a></li>
+        <li><a>20. how do you find the client's browser name? | <span style='color: red'>b) navigator.appname</span></a></li>
+        <li><a>21. what are the basic ways that people can become aware of your web site? | <span style='color: red'>d) all of the above.</span></a></li>
+        <li><a>22. what are the basic ways to provide hints for search engines? | <span style='color: red'>d) all of the above for every major search engines.</span></a></li>
+        <li><a>23. the web security issues are involved in | <span style='color: red'>d) all of the above.</span></a></li>
+        <li><a>24. what should you keep in mind when you use links in a web page? | <span style='color: red'>c) both a and b.</span></a></li>
+        <li><a>25. what should you keep in mind when you use images in a web page | <span style='color: red'>c) both a and b.</span></a></li>
+        <li><a>26. in an html form, if you require users to input a number that has a maximum of ten digits, like a telephone number, you can use the ___ property/attribute to make sure that no more than ten digits are accepted in the field | <span style='color: red'>b) maxlength</span></a></li>
+        <li><a>27. in html, use the ___ property/attribute to set a default value that displays in an input box when the form is initially displayed | <span style='color: red'>b) value</span></a></li>
+        <li><a>28. in html, the ___ property/attribute identifies the cgi script that will process a form | <span style='color: red'>b) action</span></a></li>
+        <li><a>29. in javascript, the following loop will execute ___ times.for (x=1; x&lt;11; x++) | <span style='color: red'>b) 10</span></a></li>
+        <li><a>30. the majority of a typical web document will be found in: | <span style='color: red'>c) the body tag.</span></a></li>
+        <li><a>31. in javascript, the symbols + - * and / are: | <span style='color: red'>a) operators.</span></a></li>
+        <li><a>32. in javascript, the expression x!=y returns false if: | <span style='color: red'>a) the variables are equal.</span></a></li>
+        <li><a>33. in javascript, which of the following is a logical operator? | <span style='color: red'>b) &&</span></a></li>
+        <li><a>34. when you want to use javascript to manipulate the browser window, the browser window's javascript object name is: | <span style='color: red'>c) window</span></a></li>
+        <li><a>35. alert(message), close() and reset() are javascript: | <span style='color: red'>b) methods</span></a></li>
+        <li><a>36. when you want to use javascript to manipulate the currently displayed web page, the web page's javascript object name is: | <span style='color: red'>b) document</span></a></li>
+        <li><a>38. in javascript, what would be the proper form of address in the object hierarchy for the second element in a form called "info"? | <span style='color: red'>a) document.info.elements[1]</span></a></li>
+        <li><a>39. a named element in a javascript program that is used to store and retrieve data is a ___ | <span style='color: red'>c) variable</span></a></li>
+        <li><a>40. which of the following is not true | <span style='color: red'>a) css is tightly integrated with the html structure.</span></a></li>
+        <li><a>41. to define a style sheet, you need to | <span style='color: red'>c) both a and b.</span></a></li>
+        <li><a>42. which of the following is a valid style definition format | <span style='color: red'>c) both a and b.</span></a></li>
+        <li><a>43. for defining a spacing property in a style sheet, which of the following is not true | <span style='color: red'>d) position white-space: normal</span></a></li>
+        <li><a>44. which html tag is used to define an embedded style sheet? | <span style='color: red'>b) &lt;style&gt;</span></a></li>
+        <li><a>45. the introduction of cgi scripts changed the way that the web was used because: | <span style='color: red'>d) all of the above.</span></a></li>
+        <li><a>46. in an html form, the correct syntax for creating an input box named "phone" that is 15 characters in length is: | <span style='color: red'>c) &lt;input type="text" name= "phone" size= "15"&gt;</span></a></li>
+        <li><a>47. in a form, if you want users to select only one option out of many, use: | <span style='color: red'>b) radio buttons.</span></a></li>
+        <li><a>48. in html, you use a button on a form to: | <span style='color: red'>d) all of the above.</span></a></li>
+        <li><a>49. which is the correct css syntax? | <span style='color: red'>a) body {color: black}</span></a></li>
+        <li><a>50. which html attribute is used to define inline styles? | <span style='color: red'>a) style</span></a></li>
+        <li><a>is it possible to nest functions in javascript? | <span style='color: red'>true</span></a></li>
+        <li><a>&lt;script&gt; document.write(navigator.appcodename); &lt;/script&gt; | <span style='color: red'>get code name of the browser of a visitor</span></a></li>
+        <li><a>which of the following is true? | <span style='color: red'>if onkeydown returns false, the key-press event is cancelled.</span></a></li>
+        <li><a>scripting language are | <span style='color: red'>high level programming language</span></a></li>
+        <li><a>which best explains getselection()? | <span style='color: red'>returns the value of cursor-selected text</span></a></li>
+        <li><a>choose the client-side javascript object: | <span style='color: red'>fileupload</span></a></li>
+        <li><a> what is mean by "this" keyword in javascript? | <span style='color: red'>it refers current object</span></a></li>
+        <li><a> in javascript, window.prompt() method return true or false value | <span style='color: red'>false</span></a></li>
+        <li><a>math. round(-20.51)=? | <span style='color: red'>-21</span></a></li>
+        <li><a>choose the server-side javascript object: | <span style='color: red'>file</span></a></li>
+        <li><a>parsefloat(9+10)=? | <span style='color: red'>none</span></a></li>
+        <li><a>in javascript, which of the following method is used to evaluate the regular expression? | <span style='color: red'>eval(2*(3+5))</span></a></li>
+        <li><a>in javascript, what does isnan function do | <span style='color: red'>return true if the argument is not a number.</span></a></li>
+        <li><a>if x=103 & y=9 then x%=y , what is the value of x after executing x%=y? | <span style='color: red'>4</span></a></li>
+        <li><a>choose the external object: | <span style='color: red'>checkbox</span></a></li>
+        <li><a>which of the following is the correct syntax to create a cookie using javascrip | <span style='color: red'>document.cookie = 'key1 = value1; key2 = value2; expires = date</span></a></li>
+        <li><a>which of the following is the correct syntax to redirect a url using javascript? | <span style='color: red'>window.location='http://www.newlocation.com';</span></a></li>
+        <li><a>which of the following is the correct syntax to print a page using javascript? | <span style='color: red'>window.print;</span></a></li>
+        <li><a>how can you get the type of arguments passed to a function? | <span style='color: red'>using typeof operator</span></a></li>
+        <li><a>how can you get the total number of arguments passed to a function | <span style='color: red'>using arguments.length property</span></a></li>
+        <li><a>which of the following type of variable is visible everywhere in your javascript code? | <span style='color: red'>global variable</span></a></li>
+        <li><a>which of the following type of variable is visible only within a function where it is defined? | <span style='color: red'>local variable</span></a></li>
+        <li><a>which of the following type of variable takes precedence over other if names are same? | <span style='color: red'>both of the above</span></a></li>
+        <li><a>which of the following is correct about callbacks | <span style='color: red'>both of the above</span></a></li>
+        <li><a>which built-in method returns the character at the specified index | <span style='color: red'>charat</span></a></li>
+        <li><a>which built-in method combines the text of two strings and returns a new string? | <span style='color: red'>concat</span></a></li>
+        <li><a>is it possible to set up a browser so it refuse pages that does not have a content rating meta tag | <span style='color: red'>yes - many companies and parents actually do</span></a></li>
+        <li><a>when images are used as links they get a blue border | <span style='color: red'>unless border is set to zero</span></a></li>
+        <li><a>a 6 digit hex color (#ff9966) defines values of red, blue and green in which order | <span style='color: red'>#rrggbb</span></a></li>
+        <li><a>when you count to 15 using hexadecimal numbers, the highest number is what | <span style='color: red'>f</span></a></li>
+        <li><a>the &lt;small&gt; and &lt;big&gt; tags are special in what way | <span style='color: red'>they can be repeated</span></a></li>
+        <li><a>what does vlink mean | <span style='color: red'>visited link</span></a></li>
+        <li><a>banners, buttons, dividers, clipart and other simple images usually work best as | <span style='color: red'>fonts</span></a></li>
+        <li><a>which format usually works best for photos | <span style='color: red'>jpg</span></a></li>
+        <li><a>&lt;a&gt; and &lt;/a&gt; are the tags used for | <span style='color: red'>adding links to your page</span></a></li>
+        <li><a>what does the generator meta tag tell | <span style='color: red'>which program was used to produce the page</span></a></li>
+        <li><a>what tag is used to add columns to tables | <span style='color: red'>&lt;colspan&gt;</span></a></li>
+        <li><a>use&lt;td&gt; and &lt;/td&gt;to add what to your tables | <span style='color: red'>columns</span></a></li>
+        <li><a>what is the refresh meta tag used for | <span style='color: red'>redirect to a new domain</span></a></li>
+        <li><a>screen colors are defined by which colors | <span style='color: red'>red, green and blue</span></a></li>
+        <li><a>what tag can prevent sites with adult content from being seen on msiebrowsers | <span style='color: red'>icra.org registered &lt;meta http-equiv="pics-label"&gt;</span></a></li>
+        <li><a>to specify a font for your whole page add which tag | <span style='color: red'>&lt;basefont&gt;</span></a></li>
+        <li><a>increasing the cellpadding value will what | <span style='color: red'>increase the distance between cell and content</span></a></li>
+        <li><a>which of the following is not true of metatags use | <span style='color: red'>use as many keywords as you can</span></a></li>
+        <li><a>to change the size of an image in html use what | <span style='color: red'>height and width</span></a></li>
+        <li><a>hex-colors are the only way to define colors on the web? | <span style='color: red'>false, colors can also be specified with names and css</span></a></li>
+        <li><a>is it a common myth that meta tags seriously improve search engine rankings | <span style='color: red'>yes</span></a></li>
+        <li><a>choose the correct html tag to make a text italic | <span style='color: red'>&lt;i&gt;</span></a></li>
+        <li><a>choose the correct html tag to make a text bold | <span style='color: red'>&lt;b&gt;</span></a></li>
+        <li><a>if the background image is smaller than the screen, what will happen | <span style='color: red'>it will be repeated</span></a></li>
+        <li><a>html defines colors using hexidecimal values, while graphics programs most often use what | <span style='color: red'>rgb code</span></a></li>
+        <li><a>the &lt;title&gt; tag belongs where in your html | <span style='color: red'>head</span></a></li>
+        <li><a>if you don"t want the frame windows to be resizeable, simply add what to the &lt;frame&gt; lines | <span style='color: red'>noresize</span></a></li>
+        <li><a>how can you make a list that lists the items with numbers? | <span style='color: red'>&lt;ol&gt;</span></a></li>
+        <li><a>most search engines give serious importance to meta tags when ranking websites in their listings | <span style='color: red'>false</span></a></li>
+        <li><a>which colors consist of equal amounts of all basic colors | <span style='color: red'>white, black and gray</span></a></li>
+        <li><a>the world wide web was devised by ___ | <span style='color: red'>cern</span></a></li>
+        <li><a>the world wide web is referred to shortly as the ___ a)net | <span style='color: red'>b)web</span></a></li>
+        <li><a>the web aids users to explore the ___ | <span style='color: red'>c)net</span></a></li>
+        <li><a>the world wide web consists of ___ a)information | <span style='color: red'>b)web pages</span></a></li>
+        <li><a>___ is a simple language to design and develop web pages | <span style='color: red'>d)c, basic, (a)html, visual basic</span></a></li>
+        <li><a>web is a collection of ___ | <span style='color: red'>a)web sites</span></a></li>
+        <li><a>web pages contain ___ to other web pages | <span style='color: red'>c)hyperlinks</span></a></li>
+        <li><a>the initial web page present in a web site is the ___ page | <span style='color: red'>c)home</span></a></li>
+        <li><a>the components of a url are ___ | <span style='color: red'>b)service, hostname, port, directory-path</span></a></li>
+        <li><a>service indicates the name of the ___ used to access data present on the other end of thelink | <span style='color: red'>b)protocol</span></a></li>
+        <li><a>host name indicates the domain name of the web ___ | <span style='color: red'>a)server</span></a></li>
+        <li><a>html stands for ___ | <span style='color: red'>d)hyper text markup language</span></a></li>
+        <li><a>___ are special code which separate html from ordinary text | <span style='color: red'>b)tags</span></a></li>
+        <li><a>dtd stands for ___ | <span style='color: red'>c)document type definition</span></a></li>
+        <li><a>ietf level 2 html dtd supports graphical browsers like ___ | <span style='color: red'>a)mosaic</span></a></li>
+        <li><a>http is the acronym for ___ | <span style='color: red'>c)hyper text transfer protocol</span></a></li>
+        <li><a>the step involved in communicating between the web clients and server is ___ | <span style='color: red'>a)connection</span></a></li>
+        <li><a>the entire content for the web page is enclosed within ___ tags | <span style='color: red'>a)&lt;body&gt;</span></a></li>
+        <li><a>the &lt;img&gt; tag is used to add ___ to our web page | <span style='color: red'>b)images</span></a></li>
+        <li><a>the tags which require a closed tag are called ___ tags | <span style='color: red'>c)paired</span></a></li>
+        <li><a>&lt;i&gt;___&lt;/i&gt; indicates ___ | <span style='color: red'>b)italics</span></a></li>
+        <li><a>&lt;strong&gt; ___&lt;/strong&gt; indicates ___ | <span style='color: red'>c)bold italics</span></a></li>
+        <li><a>the title of the web page is usually written within the ___ tags | <span style='color: red'>a)&lt;title&gt;</span></a></li>
+        <li><a>the &lt;pre&gt; tag enables the insertion of ___ text into html files | <span style='color: red'>b)preformatted</span></a></li>
+        <li><a>&lt;a&gt;___.&lt;/a&gt; tag creates ___ | <span style='color: red'>a)anchors</span></a></li>
+        <li><a>special characters are enclosed using ___ and ___ | <span style='color: red'>c) & and ;</span></a></li>
+        <li><a>gif is the acronym for ___ | <span style='color: red'>b)graphical interchange format</span></a></li>
+        <li><a>jpeg is the acronym for ___ | <span style='color: red'>a)joint pictures expert group</span></a></li>
+        <li><a>the ___option within the &lt;img&gt; tag aligns the text according to the specified position | <span style='color: red'>b)align</span></a></li>
+        <li><a>the scrolling attribute within the &lt;frame&gt; tag can take values ___ | <span style='color: red'>c)yes, no, auto</span></a></li>
+        <li><a>the attributes of &lt;frameset&gt; tag are ___ and ___ | <span style='color: red'>b)cols,rows</span></a></li>
+        <li><a>the attributes for tag for ordered list are ___ | <span style='color: red'>c)type ,start</span></a></li>
+        <li><a>the three types of bullets are ___,___ and ___ | <span style='color: red'>b)disc, circle, square</span></a></li>
+        <li><a>the extensions of &lt;hr&gt; tage are ___,___, ___and ___ | <span style='color: red'>d)size, nonshade, align, width</span></a></li>
+        <li><a>in the &lt;bgcolor=#xxxxxx&gt; tag, #xxxxxx stands for rrggbb. r, g and b stand for ___, ___ and ___ respectively | <span style='color: red'>d)red, blue, green</span></a></li>
+        <li><a>the attribute used to specify the vertical space around an image is ___ | <span style='color: red'>a)vspace</span></a></li>
+        <li><a>the cellpadding attribute of &lt;table&gt; tag indicates ___ between border and contents of the cell | <span style='color: red'>a)space</span></a></li>
+        <li><a>the tag used to define table rows is ___a)&lt;row&gt; | <span style='color: red'>b)&lt;tr&gt;</span></a></li>
+        <li><a>&lt;td&gt;___&lt;/td&gt; denotes ___ | <span style='color: red'>b)table elements</span></a></li>
+        <li><a>in microsoft internet explorer, the color of the font can be specified using ___ tag | <span style='color: red'>b)color</span></a></li>
+        <li><a>&lt;l1 type = shape&gt; tag is supported by___ | <span style='color: red'>c)netscape navigator</span></a></li>
+        <li><a>users can enter information in a web page and send it to the server using the ___ tag | <span style='color: red'>a)form</span></a></li>
+        <li><a>the interface that provides effective communication between the web browsers and servers is ___ | <span style='color: red'>d)common gateway interface</span></a></li>
+        <li><a>cgi is the ___ between web browsers and servers | <span style='color: red'>b)interface</span></a></li>
+        <li><a>cgi programs are invoked based on the information provided by the ___ | <span style='color: red'>b)browser</span></a></li>
+        <li><a>the attributes of the form tag are ___ and ___ | <span style='color: red'>d)action,method</span></a></li>
+        <li><a>the ___ attribute of the form tag collects form data | <span style='color: red'>b)action</span></a></li>
+        <li><a>get is the ___ method to submit data to the server | <span style='color: red'>c)default</span></a></li>
+        <li><a>get method ___ all field names and their values into a single string | <span style='color: red'>b)concatenates</span></a></li>
+        <li><a>when type =password, the character typed would be echoed as ___ | <span style='color: red'>c)***</span></a></li>
+        <li><a>the ___ tag defines the type of data entered in the form | <span style='color: red'>d)input</span></a></li>
+        <li><a>___ within the &lt;input&gt; tag specifies the default content of the field | <span style='color: red'>b)value</span></a></li>
+        <li><a>type= ___, creates a field that is not visible | <span style='color: red'>b)hidden</span></a></li>
+        <li><a>a cgi program is usually called after a request made by the ___ | <span style='color: red'>a)browser/user</span></a></li>
+        <li><a>url stands for ___ | <span style='color: red'>b.uniform resource locator</span></a></li>
+        <li><a>a hyperlink can be ______ | <span style='color: red'>c.text or image</span></a></li>
+        <li><a>html was derived from___ | <span style='color: red'>c.sgml</span></a></li>
+        <li><a>sgml is a ___ | <span style='color: red'>c.metalanguage</span></a></li>
+        <li><a>the application that confirms whether a document is compliant to its dtd is___ | <span style='color: red'>c.sgml parser</span></a></li>
+        <li><a>ietf stands for___ | <span style='color: red'>c.internet engineering task force</span></a></li>
+        <li><a>the two major browsers used to surf the internet are___a.ms internet explorer and mosaic | <span style='color: red'>c.ms internet explorer and netscape navigator</span></a></li>
+        <li><a>the first html tag used to identify a html document is___ | <span style='color: red'>c.&lt;html&gt;</span></a></li>
+        <li><a>the &lt;p&gt; tag indicates___ | <span style='color: red'>b.paragraph break</span></a></li>
+        <li><a>&lt;cite&gt;___.&lt;/cite&gt; is used to ___ | <span style='color: red'>a.highlight citation</span></a></li>
+        <li><a>the number of levels of header supported by html is___a.two | <span style='color: red'>c.six</span></a></li>
+        <li><a>the &lt;address&gt; tag is used to ___ | <span style='color: red'>b.indicate information about the web page author</span></a></li>
+        <li><a>the tag used while quoting long passage from any material, publications or other external sourcesis___ | <span style='color: red'>b.&lt;blockquote&gt;</span></a></li>
+        <li><a>&lt;em&gt; tag is also known as___ | <span style='color: red'>c.emphasis tag</span></a></li>
+        <li><a>the &lt;tt&gt; tag indicates___ | <span style='color: red'>b.teletype text</span></a></li>
+        <li><a>&lt;u&gt; is the ___ | <span style='color: red'>b.underline tag</span></a></li>
+        <li><a>the &lt;u&gt; tag is not supported by___ | <span style='color: red'>c.netscape navigator</span></a></li>
+        <li><a>the tag used to enclose program code is___ | <span style='color: red'>b.&lt;code&gt;</span></a></li>
+        <li><a>&lt;i&gt; is similar to___ | <span style='color: red'>c.&lt;em&gt;</span></a></li>
+        <li><a>&lt;dl&gt;___&lt;/dl&gt; indicates___ | <span style='color: red'>b.glossary list</span></a></li>
+        <li><a>&lt;dt&gt; stands for___ | <span style='color: red'>b.definition term</span></a></li>
+        <li><a>special characters allow browsers to display ___ | <span style='color: red'>c.symbols</span></a></li>
+        <li><a>the keyword for providing links within or across documents is___ | <span style='color: red'>b.hypertext</span></a></li>
+        <li><a>stringing pages together using hypertext technology helps view pages ___ | <span style='color: red'>b.in sequential order</span></a></li>
+        <li><a>&lt;a&gt;___ &lt;/a&gt; signifies___ | <span style='color: red'>a.anchor tag</span></a></li>
+        <li><a>the term used within the anchor tag to specify the location of another resource or file name is___ | <span style='color: red'>b.href</span></a></li>
+        <li><a>the src attribute of the &lt;img&gt; tag stands for___ | <span style='color: red'>a.location of the image file</span></a></li>
+        <li><a>the attribute which makes the image a clickable map is___a.click | <span style='color: red'>c.ismap</span></a></li>
+        <li><a>the image format supported by most browsers is___ | <span style='color: red'>c. gif and jpeg</span></a></li>
+        <li><a>the idea of using frames to control the layout of the browser window was put forward by___ | <span style='color: red'>d.netscape communications corporation</span></a></li>
+        <li><a>the attribute to divide documents into columns is___a.columns | <span style='color: red'>b.cols</span></a></li>
+        <li><a>to include frames in a document, the &lt;frameset&gt; tag replaces the___ | <span style='color: red'>c. &lt;body&gt; tag</span></a></li>
+        <li><a>the contents within &lt;no frames&gt; are displayed in ______ | <span style='color: red'>d.all non-netscape browsers</span></a></li>
+        <li><a>the &lt;center&gt; tag ___ | <span style='color: red'>b.centers the text on the screen</span></a></li>
+        <li><a>the &lt;ul&gt; tag has only one extension namely___ | <span style='color: red'>a.type</span></a></li>
+        <li><a>the size extension of &lt;hr&gt; tag indicates the ___of the line | <span style='color: red'>d.height</span></a></li>
+        <li><a>the default alignment of a line is___ | <span style='color: red'>c.center</span></a></li>
+        <li><a>the attributes of the &lt;font&gt; tag are___ | <span style='color: red'>b.size and color</span></a></li>
+        <li><a>in the rgb color scheme for the &lt;bgcolor&gt; tag, the value 000000 stands for ___ color | <span style='color: red'>c.black</span></a></li>
+        <li><a>the tag &lt;body background = file&gt; is used to specify ___ as the background | <span style='color: red'>b.an image</span></a></li>
+        <li><a>the &lt;sup&gt; tag indicates___ | <span style='color: red'>b.superscript</span></a></li>
+        <li><a>in the tag &lt;img border=n&gt;, n specifies | <span style='color: red'>c.a number in pixels</span></a></li>
+        <li><a>the space between cells in a table is specified by the attribute | <span style='color: red'>b.cellspacing</span></a></li>
+        <li><a>specify &lt;table&gt; tag alone displays | <span style='color: red'>c.a table without border</span></a></li>
+        <li><a>face is an extension of | <span style='color: red'>b.microsoft internet explorer</span></a></li>
+        <li><a>the default face is___ | <span style='color: red'>b.times roman</span></a></li>
+        <li><a>the &lt;hr noshade&gt; tag is supported by | <span style='color: red'>b.internet explorer alone</span></a></li>
+        <li><a>which of the following is not supported by internet explorer? | <span style='color: red'>d.&lt;l1 type = shape&gt;</span></a></li>
+        <li><a> is it possible to set up a browser so it refuse pages that does not have a content rating meta tag? | <span style='color: red'>yes - many companies and parents actually do </span></a></li>
+        <li><a> when images are used as links they get a blue border | <span style='color: red'>c) unless border is set to zero </span></a></li>
+        <li><a> a 6 digit hex color (#ff9966) defines values of red, blue and green in which order | <span style='color: red'>#rrggbb </span></a></li>
+        <li><a> when you count to 15 using hexadecimal numbers, the highest number is what | <span style='color: red'>f </span></a></li>
+        <li><a> the &lt;small&gt; and &lt;big&gt; tags are special in what way | <span style='color: red'>they can be repeated </span></a></li>
+        <li><a> what does vlink mean | <span style='color: red'>visited link </span></a></li>
+        <li><a> banners, buttons, dividers, clipart and other simple images usually work best as | <span style='color: red'>gif </span></a></li>
+        <li><a> which format usually works best for photos | <span style='color: red'>jpg </span></a></li>
+        <li><a> &lt;a&gt; and &lt;/a&gt; are the tags used for | <span style='color: red'>adding links to your page </span></a></li>
+        <li><a> what does the generator meta tag tell | <span style='color: red'>which program was used to produce the page </span></a></li>
+        <li><a> what tag is used to add columns to tables | <span style='color: red'>&lt;td&gt; </span></a></li>
+        <li><a> use&lt;td&gt; and &lt;/td&gt;to add what to your tables? | <span style='color: red'>columns </span></a></li>
+        <li><a> what is the refresh meta tag used for | <span style='color: red'>redirect to a new domain </span></a></li>
+        <li><a> screen colors are defined by which colors | <span style='color: red'>red, green and blue </span></a></li>
+        <li><a> what tag can prevent sites with adult content from being seen on msiebrowsers | <span style='color: red'>icra.org registered &lt;meta http-equiv="pics-label"&gt; </span></a></li>
+        <li><a> to specify a font for your whole page add which tag | <span style='color: red'>&lt;basefont&gt; </span></a></li>
+        <li><a> increasing the cellpadding value will what | <span style='color: red'>increase the distance between cell and content </span></a></li>
+        <li><a> which of the following is not true of metatags use | <span style='color: red'>use as many keywords as you can </span></a></li>
+        <li><a> to change the size of an image in html use what | <span style='color: red'>height and width </span></a></li>
+        <li><a> hex-colors are the only way to define colors on the web? | <span style='color: red'>false, colors can also be specified with names and css </span></a></li>
+        <li><a> is it a common myth that meta tags seriously improve search engine rankings | <span style='color: red'>yes </span></a></li>
+        <li><a> choose the correct html tag to make a text italic | <span style='color: red'>&lt;i&gt; </span></a></li>
+        <li><a> choose the correct html tag to make a text bold | <span style='color: red'>&lt;b&gt; </span></a></li>
+        <li><a> if the background image is smaller than the screen, what will happen | <span style='color: red'>it will be repeated </span></a></li>
+        <li><a> html defines colors using hexidecimal values, while graphics programs most often use what | <span style='color: red'>rgb code </span></a></li>
+        <li><a> the &lt;title&gt; tag belongs where in your html | <span style='color: red'>head </span></a></li>
+        <li><a> if you don't want the frame windows to be resizeable, simply add what to the &lt;frame&gt; lines | <span style='color: red'>noresize </span></a></li>
+        <li><a> how can you make a list that lists the items with numbers? | <span style='color: red'>&lt;ol&gt; </span></a></li>
+        <li><a> most search engines give serious importance to meta tags when ranking websites in their listings | <span style='color: red'>false </span></a></li>
+        <li><a> which colors consist of equal amounts of all basic colors | <span style='color: red'>white, black and gray </span></a></li>
+        <li><a> which has higher priority, cell settings or table settings | <span style='color: red'>cell settings </span></a></li>
+        <li><a> what does html stand for? | <span style='color: red'>hyper text markup language </span></a></li>
+        <li><a> what is the correct html for adding a background color? | <span style='color: red'>&lt;body style="background-color:white"&gt; </span></a></li>
+        <li><a> to make the appearance of the colors more powerful on your site do which of the following | <span style='color: red'>limit their use </span></a></li>
+        <li><a> when is the content of a table shown | <span style='color: red'>after the table is loaded </span></a></li>
+        <li><a> to add rows to your tables use which tags? | <span style='color: red'>&lt;tr&gt; and &lt;/tr&gt; </span></a></li>
+        <li><a> gif and jpg are the two main types of what | <span style='color: red'>images </span></a></li>
+        <li><a> wysiwyg stands for | <span style='color: red'>what you see is what you get </span></a></li>
+        <li><a> choose the correct html tag for the largest heading | <span style='color: red'>&lt;h1&gt; </span></a></li>
+        <li><a> choose the correct html to left-align the content inside a tablecell | <span style='color: red'>&lt;td align="left"&gt; </span></a></li>
+        <li><a> to create a bulleted list use | <span style='color: red'>&lt;ul&gt; </span></a></li>
+        <li><a> besides&lt;b&gt;, another way to make text bold is what | <span style='color: red'>&lt;strong&gt; </span></a></li>
+        <li><a> hexadecimal numbers are numbers based on the value of what | <span style='color: red'>16 </span></a></li>
+        <li><a> which is not a predefined target for links | <span style='color: red'>_son </span></a></li>
+        <li><a> if you do not include a description meta tag, most search engine will simply list what | <span style='color: red'>the first few words on the page </span></a></li>
+        <li><a> how many characters can be written with 1 kilobyte | <span style='color: red'>1024 </span></a></li>
+        <li><a> to start a list at the count of 3, use which | <span style='color: red'>&lt;ol start="3"&gt; </span></a></li>
+        <li><a> who is making the web standards? | <span style='color: red'>the world wide web consortium </span></a></li>
+        <li><a> which tag can set the background color for your page? | <span style='color: red'>&lt;body&gt; </span></a></li>
+        <li><a> what is the correct html tag for inserting a line break? | <span style='color: red'>&lt;br /&gt; </span></a></li>
+        <li><a> the attribute used to choose the type of font in html is | <span style='color: red'>face </span></a></li>
+        <li><a> colspan=n can be added to only what tag? | <span style='color: red'>&lt;td&gt; </span></a></li>
+        <li><a> rather than using hspace and vspace you can use which of the following to add spacing to your image | <span style='color: red'>1x1 pixel transparent image </span></a></li>
+        <li><a> what is the correct html for creating a hyperlink? | <span style='color: red'>&lt;a href="http://www.qualitypointtech.com"&gt;qualitypoint technologies&lt;/a&gt; </span></a></li>
+        <li><a> in the code &lt;frameset cols="120,*"&gt; the following would be true | <span style='color: red'>left frame would be 120 pixels wide </span></a></li>
+        <li><a> which program do you need to write html? | <span style='color: red'>any text editor </span></a></li>
+        <li><a> when making bulleted lists you have what options | <span style='color: red'>disc, circle, square </span></a></li>
+        <li><a> a file that specifies how the screen is divided into frames is called a ___ | <span style='color: red'>frameset </span></a></li>
+        <li><a> which of these is not valid html? | <span style='color: red'>&lt;fontface="verdana"&gt; </span></a></li>
+        <li><a> which of these tags are all &lt;table&gt;tags? | <span style='color: red'>&lt;table&gt;&lt;tr&gt;&lt;td&gt; </span></a></li>
+        <li><a> the &lt;br&gt;tag adds what to your webpage | <span style='color: red'>line break </span></a></li>
+        <li><a> what tag tells where a link starts | <span style='color: red'>&lt;a&gt; </span></a></li>
+        <li><a> settings for columns(&lt;td&gt; tag) have higher priority than settings for rows(&lt;tr&gt; tag) | <span style='color: red'>true </span></a></li>
+        <li><a> colors in plain html can be specified using | <span style='color: red'>hexadecimal colors </span></a></li>
+        <li><a> relative path make your hypertext links___ | <span style='color: red'>portable </span></a></li>
+        <li><a> &lt;ol&gt; tags will create what kind of list | <span style='color: red'>numbered list </span></a></li>
+        <li><a> is it possible to link within the current page | <span style='color: red'>yes </span></a></li>
+        <li><a> tags and text that do not show directly on the page are placed where | <span style='color: red'>head </span></a></li>
+        <li><a> to create a list using lowercase letters use | <span style='color: red'>&lt;ol type="a"&gt; </span></a></li>
+        <li><a> to seperate single list items use | <span style='color: red'>&lt;ol&gt; and &lt;/ol&gt; </span></a></li>
+        <li><a> which section is used for text and tags that are shown directly on your web page | <span style='color: red'>body </span></a></li>
+        <li><a> to set the font for a single link, where do you add the &lt;font&gt;&lt;/font&gt; tags | <span style='color: red'>inside the &lt;a&gt; and &lt;/a&gt; tags </span></a></li>
+        <li><a> why should you add alternative text to your images | <span style='color: red'>so the users can get an idea of what the image is before it loads </span></a></li>
+        <li><a> what is used to store information usually relevant to browsers and searchengines? | <span style='color: red'>metatags </span></a></li>
+        <li><a> what tag tells the browser where the page starts and stops | <span style='color: red'>&lt;html&gt; </span></a></li>
+        <li><a> why should you specify a background color if you are using an image for the actual background of your page | <span style='color: red'>the background color will be shown until the image loads </span></a></li>
+        <li><a> the background image will scroll when the user scrolls down the page, unless you add which property to the &lt;body&gt; tag? | <span style='color: red'>bgproperties="fixed" </span></a></li>
+        <li><a> imagelinks can show a text label if you add which property? | <span style='color: red'>alt </span></a></li>
+        <li><a> adding a border to your image helps the visitor to recognize it as what | <span style='color: red'>a link </span></a></li>
+        <li><a> which of the following is not a valid pair for browser safe colors | <span style='color: red'>aa </span></a></li>
+        <li><a> to start a numbered list with regular numerals use | <span style='color: red'>&lt;ol type="1"&gt; </span></a></li>
+        <li><a> defining clickable sub-areas on an image is called? | <span style='color: red'>imagemapping </span></a></li>
+        <li><a> how can you open a link in a new browser window? | <span style='color: red'>&lt;a href="url" target="_blank"&gt; </span></a></li>
+        <li><a> what tag adds a paragraph break after the text | <span style='color: red'>&lt;p&gt; </span></a></li>
+        <li><a> which property will open a page in a new window? | <span style='color: red'>target="_blank" </span></a></li>
+        <li><a> the &lt;i&gt; tag makes text___ | <span style='color: red'>italic </span></a></li>
+        <li><a> which two meta tags have special relevance for search engines | <span style='color: red'>description and keywords </span></a></li>
+        <li><a> to start a list using circles use which of these tags | <span style='color: red'>&lt;ul type="circle"&gt; </span></a></li>
+        <li><a> all normal webpages consist of what two parts | <span style='color: red'>head and body </span></a></li>
+        <li><a> use what to prevent confusion on numbers higher than 9 with hexadecimal colors | <span style='color: red'># </span></a></li>
+        <li><a> why do designers often use slight variations of black and white as background colors | <span style='color: red'>to make the page more readable </span></a></li>
+        <li><a> which will let text wrap down the side of the image? | <span style='color: red'>&lt;img src="myimage.gif" align="right"&gt; </span></a></li>
+        <li><a> there are how many "browser safe colors" | <span style='color: red'>216 </span></a></li>
+        <li><a> how do you add a link which will allow the visitor to send an email from your page | <span style='color: red'>add &lt;a href="mailto:youraddress"&gt; </span></a></li>
+        <li><a> which tag is used to insert images into your web page | <span style='color: red'>img </span></a></li>
+        <li><a> one should never combine the "start" and "type" option | <span style='color: red'>false </span></a></li>
+        <li><a> what is the most important tool for adding colors to certain areas of the page rather than the entire background | <span style='color: red'>tables </span></a></li>
+        <li><a> all html tags are enclosed in what | <span style='color: red'>&lt;&gt; </span></a></li>
+        <li><a> which of the following will not be found in the &lt;head&gt; section | <span style='color: red'>table </span></a></li>
+        <li><a> which property tells how many rows a cell should span | <span style='color: red'>rowspan=n </span></a></li>
+        <li><a> you can add names to each frame window using which setting | <span style='color: red'>name </span></a></li>
+        <li><a> using hspace will add what to your image | <span style='color: red'>space to the left and right</span></a></li>
+        <li><a> the world wide web is referred to shortly as the ___ | <span style='color: red'>web </span></a></li>
+        <li><a> the web aids users to explore the ___ | <span style='color: red'>net </span></a></li>
+        <li><a> the world wide web was devised by ___ | <span style='color: red'>cern </span></a></li>
+        <li><a> the world wide web is referred to shortly as the ___ a)net | <span style='color: red'>web </span></a></li>
+        <li><a> the world wide web consists of ___ a)information | <span style='color: red'>b)web pages </span></a></li>
+        <li><a> ___ is a simple language to design and develop web pages | <span style='color: red'>c, basic, (a)html, visual basic </span></a></li>
+        <li><a> web is a collection of ___ | <span style='color: red'>web sites </span></a></li>
+        <li><a> web pages contain ___ to other web pages | <span style='color: red'>hyperlinks </span></a></li>
+        <li><a> the initial web page present in a web site is the ___ page | <span style='color: red'>home </span></a></li>
+        <li><a> the components of a url are ___ | <span style='color: red'>service, hostname, port, directory-path </span></a></li>
+        <li><a> service indicates the name of the ___ used to access data present on the other end of thelink | <span style='color: red'>protocol </span></a></li>
+        <li><a> host name indicates the domain name of the web ___ | <span style='color: red'>server </span></a></li>
+        <li><a> html stands for ___ | <span style='color: red'>hyper text markup language </span></a></li>
+        <li><a> ___ are special code which separate html from ordinary text | <span style='color: red'>tags </span></a></li>
+        <li><a> dtd stands for ___ | <span style='color: red'>document type definition </span></a></li>
+        <li><a> ietf level 2 html dtd supports graphical browsers like ___ | <span style='color: red'>mosaic </span></a></li>
+        <li><a> http is the acronym for ___ | <span style='color: red'>hyper text transfer protocol </span></a></li>
+        <li><a> the step involved in communicating between the web clients and server is ___ | <span style='color: red'>connection </span></a></li>
+        <li><a> the entire content for the web page is enclosed within ___ tags | <span style='color: red'>&lt;body&gt; </span></a></li>
+        <li><a> the &lt;img&gt; tag is used to add ___ to our web page | <span style='color: red'>images </span></a></li>
+        <li><a> the tags which require a closed tag are called ___ tags | <span style='color: red'>paired </span></a></li>
+        <li><a> &lt;i&gt;___&lt;/i&gt; indicates ___ | <span style='color: red'>italics </span></a></li>
+        <li><a> &lt;strong&gt; ___&lt;/strong&gt; indicates ___ | <span style='color: red'>bold italics </span></a></li>
+        <li><a> the title of the web page is usually written within the ___ tags | <span style='color: red'>&lt;head&gt; </span></a></li>
+        <li><a> the &lt;pre&gt; tag enables the insertion of ___ text into html files | <span style='color: red'>preformatted </span></a></li>
+        <li><a> &lt;a&gt;___.&lt;/a&gt; tag creates ___ | <span style='color: red'>anchors </span></a></li>
+        <li><a> special characters are enclosed using ___ and ___ | <span style='color: red'>& and ; </span></a></li>
+        <li><a> gif is the acronym for ___ | <span style='color: red'>graphical interchange format </span></a></li>
+        <li><a> jpeg is the acronym for ___ | <span style='color: red'>joint pictures expert group </span></a></li>
+        <li><a> the ___option within the &lt;img&gt; tag aligns the text according to the specified position | <span style='color: red'>align </span></a></li>
+        <li><a> the scrolling attribute within the &lt;frame&gt; tag can take values ___ | <span style='color: red'>yes, no, auto </span></a></li>
+        <li><a> the attributes of &lt;frameset&gt; tag are ___ and ___ | <span style='color: red'>cols,rows </span></a></li>
+        <li><a> the attributes for tag for ordered list are ___ | <span style='color: red'>type ,start </span></a></li>
+        <li><a> the three types of bullets are ___,___ and ___ | <span style='color: red'>disc, circle, square </span></a></li>
+        <li><a> the extensions of &lt;hr&gt; tage are ___,___, ___and ___ | <span style='color: red'>size, nonshade, align, width </span></a></li>
+        <li><a> in the &lt;bgcolor=#xxxxxx&gt; tag, #xxxxxx stands for rrggbb. r, g and b stand for ___, ___ and ___ respectively | <span style='color: red'>red, blue, green </span></a></li>
+        <li><a> the attribute used to specify the vertical space around an image is ___ | <span style='color: red'>vspace </span></a></li>
+        <li><a> the cellpadding attribute of &lt;table&gt; tag indicates ___ between border and contents of the cell | <span style='color: red'>space </span></a></li>
+        <li><a> the tag used to define table rows is ___a)&lt;row&gt; | <span style='color: red'>&lt;tr&gt; </span></a></li>
+        <li><a> &lt;td&gt;___&lt;/td&gt; denotes ___ | <span style='color: red'>table elements </span></a></li>
+        <li><a> in microsoft internet explorer, the color of the font can be specified using ___ tag | <span style='color: red'>color </span></a></li>
+        <li><a> &lt;l1 type = shape&gt; tag is supported by___ | <span style='color: red'>netscape navigator </span></a></li>
+        <li><a> users can enter information in a web page and send it to the server using the ___ tag | <span style='color: red'>form </span></a></li>
+        <li><a> the interface that provides effective communication between the web browsers and servers is ___ | <span style='color: red'>common gateway interface </span></a></li>
+        <li><a> cgi is the ___ between web browsers and servers | <span style='color: red'>interface </span></a></li>
+        <li><a> cgi programs are invoked based on the information provided by the ___ | <span style='color: red'>browser </span></a></li>
+        <li><a> the attributes of the form tag are ___ and ___ | <span style='color: red'>action,method </span></a></li>
+        <li><a> the ___ attribute of the form tag collects form data | <span style='color: red'>action </span></a></li>
+        <li><a> get is the ___ method to submit data to the server | <span style='color: red'>default </span></a></li>
+        <li><a> get method ___ all field names and their values into a single string | <span style='color: red'>concatenates </span></a></li>
+        <li><a> when type =password, the character typed would be echoed as ___ | <span style='color: red'>*** </span></a></li>
+        <li><a> the ___ tag defines the type of data entered in the form | <span style='color: red'>input </span></a></li>
+        <li><a> ___ within the &lt;input&gt; tag specifies the default content of the field | <span style='color: red'>value </span></a></li>
+        <li><a> type= ___, creates a field that is not visible | <span style='color: red'>hidden </span></a></li>
+        <li><a> a cgi program is usually called after a request made by the ___ | <span style='color: red'>browser/user </span></a></li>
+        <li><a> url stands for ___ | <span style='color: red'>uniform resource locator </span></a></li>
+        <li><a> a hyperlink can be ______ | <span style='color: red'>text or image </span></a></li>
+        <li><a> html was derived from___ | <span style='color: red'>sgml </span></a></li>
+        <li><a> sgml is a ___ | <span style='color: red'>metalanguage </span></a></li>
+        <li><a> the application that confirms whether a document is compliant to its dtd is___ | <span style='color: red'>sgml parser </span></a></li>
+        <li><a> ietf stands for___ | <span style='color: red'>internet engineering task force </span></a></li>
+        <li><a> the two major browsers used to surf the internet are___a.ms internet explorer and mosaic | <span style='color: red'>ms internet explorer and netscape navigator </span></a></li>
+        <li><a> the first html tag used to identify a html document is___ | <span style='color: red'>&lt;html&gt; </span></a></li>
+        <li><a> the &lt;p&gt; tag indicates___ | <span style='color: red'>paragraph break </span></a></li>
+        <li><a> &lt;cite&gt;___.&lt;/cite&gt; is used to ___ | <span style='color: red'>highlight citation </span></a></li>
+        <li><a> the number of levels of header supported by html is___a.two | <span style='color: red'>six </span></a></li>
+        <li><a> the &lt;address&gt; tag is used to ___ | <span style='color: red'>indicate information about the web page author </span></a></li>
+        <li><a> the tag used while quoting long passage from any material, publications or other external sourcesis___ | <span style='color: red'>&lt;blockquote&gt; </span></a></li>
+        <li><a> &lt;em&gt; tag is also known as___ | <span style='color: red'>emphasis tag </span></a></li>
+        <li><a> the &lt;tt&gt; tag indicates___ | <span style='color: red'>teletype text </span></a></li>
+        <li><a> &lt;u&gt; is the ___ | <span style='color: red'>underline tag </span></a></li>
+        <li><a> the &lt;u&gt; tag is not supported by___ | <span style='color: red'>netscape navigator </span></a></li>
+        <li><a> the tag used to enclose program code is___ | <span style='color: red'>&lt;code&gt; </span></a></li>
+        <li><a> &lt;i&gt; is similar to___ | <span style='color: red'>&lt;em&gt; </span></a></li>
+        <li><a> &lt;dl&gt;___&lt;/dl&gt; indicates___ | <span style='color: red'>glossary list </span></a></li>
+        <li><a> &lt;dt&gt; stands for___ | <span style='color: red'>definition term </span></a></li>
+        <li><a> special characters allow browsers to display ___ | <span style='color: red'>symbols </span></a></li>
+        <li><a> the keyword for providing links within or across documents is___ | <span style='color: red'>hypertext </span></a></li>
+        <li><a> stringing pages together using hypertext technology helps view pages ___ | <span style='color: red'>in sequential order </span></a></li>
+        <li><a> &lt;a&gt;___ &lt;/a&gt; signifies___ | <span style='color: red'>anchor tag </span></a></li>
+        <li><a> the term used within the anchor tag to specify the location of another resource or file name is___ | <span style='color: red'>href </span></a></li>
+        <li><a> the src attribute of the &lt;img&gt; tag stands for___ | <span style='color: red'>location of the image file </span></a></li>
+        <li><a> the attribute which makes the image a clickable map is___a.click | <span style='color: red'>clickmap </span></a></li>
+        <li><a> the image format supported by most browsers is___ | <span style='color: red'>gif and jpeg </span></a></li>
+        <li><a> the idea of using frames to control the layout of the browser window was put forward by___ | <span style='color: red'>netscape communications corporation </span></a></li>
+        <li><a> the attribute to divide documents into columns is___a.columns | <span style='color: red'>cols </span></a></li>
+        <li><a> to include frames in a document, the &lt;frameset&gt; tag replaces the___ | <span style='color: red'>&lt;body&gt; tag </span></a></li>
+        <li><a> the contents within &lt;no frames&gt; are displayed in ______ | <span style='color: red'>all non-netscape browsers </span></a></li>
+        <li><a> the &lt;center&gt; tag ___ | <span style='color: red'>centers the text on the screen </span></a></li>
+        <li><a> the &lt;ul&gt; tag has only one extension namely___ | <span style='color: red'>type </span></a></li>
+        <li><a> the size extension of &lt;hr&gt; tag indicates the ___of the line | <span style='color: red'>height </span></a></li>
+        <li><a> the default alignment of a line is___ | <span style='color: red'>center </span></a></li>
+        <li><a> the attributes of the &lt;font&gt; tag are___ | <span style='color: red'>size and color </span></a></li>
+        <li><a> in the rgb color scheme for the &lt;bgcolor&gt; tag, the value 000000 stands for ___ color | <span style='color: red'>black </span></a></li>
+        <li><a> the tag &lt;body background = file&gt; is used to specify ___ as the background | <span style='color: red'>an image </span></a></li>
+        <li><a> the &lt;sup&gt; tag indicates___ | <span style='color: red'>superscript </span></a></li>
+        <li><a> in the tag &lt;img border=n&gt;, n specifies | <span style='color: red'>a number in pixels </span></a></li>
+        <li><a> the space between cells in a table is specified by the attribute | <span style='color: red'>cellspacing </span></a></li>
+        <li><a> specify &lt;table&gt; tag alone displays | <span style='color: red'>a table without border </span></a></li>
+        <li><a> face is an extension of | <span style='color: red'>microsoft internet explorer </span></a></li>
+        <li><a> the default face is___ | <span style='color: red'>times roman </span></a></li>
+        <li><a> the &lt;hr noshade&gt; tag is supported by | <span style='color: red'>internet explorer alone </span></a></li>
+        <li><a> which of the following is not supported by internet explorer? | <span style='color: red'>&lt;l1 type = shape&gt; </span></a></li>
+        <li><a>which of the following return the hostname and part of the current url? | <span style='color: red'>location</span></a></li>
+        <li><a>which of the following are the advantages of using javascript for form validation? | <span style='color: red'>all</span></a></li>
+        <li><a>radio buttons let a user select one of a limited number of choice by_ attribute | <span style='color: red'>name</span></a></li>
+        <li><a>which statement is mung about headings in html document | <span style='color: red'>h6</span></a></li>
+        <li><a>which statement is right about web browser | <span style='color: red'>all</span></a></li>
+        <li><a>the four links states are | <span style='color: red'>a:link; a:visited; a:action ; a:hover</span></a></li>
+        <li><a>how do you find out which character occurs at the 5th position in a string "how are you?" | <span style='color: red'>charat</span></a></li>
+        <li><a>when can you not trigger javascripa from an event handler? | <span style='color: red'>when js is disable</span></a></li>
+        <li><a>you can use property to change the list style to show roman numerals instead of normal numbers | <span style='color: red'>lisl-ster-type: upper-roman;</span></a></li>
+        <li><a>in html attributes. an input element shouid be disabled by | <span style='color: red'>hidden disable</span></a></li>
+        <li><a>what does this function do | <span style='color: red'>reuturn 1 or 2</span></a></li>
+        <li><a>after execuiing the javascript statement | <span style='color: red'>fiat</span></a></li>
+        <li><a>which slatement is true? | <span style='color: red'>widih property changes value.</span></a></li>
+        <li><a>what is cell padding? | <span style='color: red'>used to separate cell walls from their contents</span></a></li>
+        <li><a>what is the output of above code | <span style='color: red'>let margin is 25px top matgin is 50px right margin is 75px bollom margin is 100px</span></a></li>
+        <li><a>what is the correct syntax in html for creating a taxi input field | <span style='color: red'>textfield</span></a></li>
+        <li><a>what is the correct syntax in html for creating a link on a webpage | <span style='color: red'>&lt;a href-"withoutbookl?mb</span></a></li>
+        <li><a>which is the correct css syntax | <span style='color: red'>body{color black;}</span></a></li>
+        <li><a>the diference between arrays and objeds | <span style='color: red'>all</span></a></li>
+        <li><a>which ofthe following is wrong? | <span style='color: red'>[0-9] find any of the digits between the brackets</span></a></li>
+        <li><a>which of these tags are all &lt;table&gt; tags? | <span style='color: red'>&lt;table&gt;&lt;tr&gt;&lt;td&gt;</span></a></li>
+        <li><a>to group the header content in a table- which tag is used? | <span style='color: red'>thread</span></a></li>
+        <li><a>which html attribute is used to de?ne an inline slyie sheet | <span style='color: red'>in-line</span></a></li>
+        <li><a>you can use property to create space between the element's border and inner conlenl | <span style='color: red'>padding</span></a></li>
+        <li><a>which of the following allows you to call a function or evaluates an expression after a speci?ed number of milliseconds? | <span style='color: red'>settimeout</span></a></li>
+        <li><a>what are&lt;div&gt; tags used for? | <span style='color: red'>to logically divide the document</span></a></li>
+        <li><a>which evemis triggered when a field loses the focus | <span style='color: red'>onblur</span></a></li>
+        <li><a>choose the correct html tag to make a text italic | <span style='color: red'>i</span></a></li>
+        <li><a>when images are used as links they get a blue border | <span style='color: red'>unless border is setto zero</span></a></li>
+        <li><a>what is the ouiput of above code | <span style='color: red'>false</span></a></li>
+        <li><a>arguments are passed by value: | <span style='color: red'>true and true</span></a></li>
+        <li><a>which outpulis true when the page is loaded in browser | <span style='color: red'>both not float</span></a></li>
+        <li><a>hyou wanted to position an elemenl to the right in its container. what is valid css property to use | <span style='color: red'>float right</span></a></li>
+        <li><a>consider the following code: | <span style='color: red'>displays "john is 50 years old."</span></a></li>
+        <li><a>to access object properties you can use | <span style='color: red'>objectnamepropertyname</span></a></li>
+        <li><a>to make an element draggable. use the global htmls attribute | <span style='color: red'>draggable</span></a></li>
+        <li><a>"you want to put an html element at a certain position on the page regardless of the other elements. what value would you give the position property? | <span style='color: red'>absolute</span></a></li>
+
+
+    </ul>
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+
+                }
+            }
+        }
+    </script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
