@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #19191b;
+}
+
+h2 {
+  color: #ccc;
+}
+
+#myInput {
+  width: 100%;
+  font-size: 14px;
+  padding: 12px;
+  border: 1px solid #333;
+  margin-bottom: 12px;
+  background: #333;
+  color: #ccc;
+}
+
+#myInput:focus {
+  outline: none;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li {
+  margin-top: -1px;
+  border: 1px solid #444;
+  background-color: #333;
+  padding: 6px 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #ccc;
+  display: block;
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+  color: #000;
+}
